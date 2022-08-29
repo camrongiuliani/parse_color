@@ -1,5 +1,3 @@
-library parse_color;
-
 import 'package:flutter/material.dart';
 
 class UIColorManager {
@@ -64,7 +62,7 @@ class UIColorManager {
     }
   }
 
-  Color _parse( dynamic input, { Color fallback = Colors.transparent }) {
+  Color parse( dynamic input, { Color fallback = Colors.transparent }) {
     if ( input is Color ) {
       return input;
     }
@@ -144,14 +142,4 @@ class UIColorManager {
     }
   }
 
-}
-
-class UIColor extends Color {
-  UIColor( dynamic value, { Color fallback = Colors.transparent } ) : super
-      (
-      UIColorManager()._parse(
-        value,
-        fallback: Colors.transparent,
-      ).value,
-    );
 }
